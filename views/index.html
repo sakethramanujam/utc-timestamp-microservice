@@ -1,12 +1,3 @@
-<!-- This is a static file -->
-<!-- served from your routes in server.js -->
-
-<!-- You might want to try something fancier: -->
-<!-- html/nunjucks docs: https://mozilla.github.io/nunjucks/ -->
-<!-- pug: https://pugjs.org/ -->
-<!-- haml: http://haml.info/ -->
-<!-- hbs(handlebars): http://handlebarsjs.com/ -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,35 +15,36 @@
     <script src="/client.js" defer></script>
   </head>
   <body>
-    <header>
-      <h1>
-        A Dream of the Future
-      </h1>
-    </header>
+      <div class="container">
+        <h2>API Project by Saketh Ramanujam under FCC Guidelines:Timestamp Microservice</h2>
+        <h3>User Story: </h3>
+        <ul>
+          <li>The API endpoint is GET [project_url]/api/timestamp/:date_string?</li>
+          <li>A date string is valid if can be successfully parsed by new Date(date_string).</li>
+          <li>The unix timestamp is an integer (not a string) specifying milliseconds.</li>
+          <li>If the date string is empty it should be equivalent to trigger new Date(), i.e. the service uses the current timestamp.</li>
+          <li>If the date string is valid the api returns a JSON having the structure
+          {"unix": <date.getTime()>, "utc" : <date.toUTCString()> }</li>
+          e.g. {"unix": 1479663089000 ,"utc": "Sun, 20 Nov 2016 17:31:29 GMT"}
+            If the date string is invalid the api returns a JSON having the structure 
+          {"error" : "Invalid Date" }.
+        </ul>
 
-    <main>
-      <p class="bold">Oh hi,</p>
-      
-      <p>Tell me your hopes and dreams:</p>
-      
-      <form>
-        <input name="dream" type="text" maxlength="100" placeholder="Dreams!" aria-labelledby="submit-dream">
-        <button type="submit" id="submit-dream">Submit Dream</button>
-      </form>
-      
-      <section class="dreams">
-        <ul id="dreams"></ul>
-      </section>
-    </main>
+        <h3>Example Usage:</h3>
+        <p>
+          [project url]/api/timestamp/2015-12-25
+          [project url]/api/timestamp/1450137600
+        </p>
 
-    <footer>
-      Made with <a href="https://glitch.com">Glitch</a>!
-    </footer>
-
-    <!-- include the Glitch button to show what the webpage is about and
-          to make it easier for folks to view source and remix -->
-    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
-    <script src="https://button.glitch.me/button.js"></script>
-
-  </body>
+        <h3>Example Output:</h3>
+        <p>
+          <code>{"unix":1451001600000, "utc":"Fri, 25 Dec 2015 00:00:00 GMT"}</code>
+        </p>
+      </div>
+      <div class="footer">
+        <p>
+          by <a href="http://www.github.com/sakethramanujam">SakethRamanujam</a>
+        </p>
+      </div>
+   </body>
 </html>
